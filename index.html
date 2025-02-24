@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PC Build Components</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">PC Build Components</h2>
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark text-center">
+                <tr>
+                    <th>Component</th>
+                    <th>Model</th>
+                    <th>Price (Rs)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Motherboard</td>
+                    <td contenteditable="true">MSI Pro B650M-A WIFI</td>
+                    <td contenteditable="true" class="price">15455</td>
+                </tr>
+                <tr>
+                    <td>CPU</td>
+                    <td contenteditable="true">AMD Ryzen 5 7600</td>
+                    <td contenteditable="true" class="price">18600</td>
+                </tr>
+                <tr>
+                    <td>RAM</td>
+                    <td contenteditable="true">Kingston Fury Beast 32GB (16GBx2) DDR5 6000MHz</td>
+                    <td contenteditable="true" class="price">8720</td>
+                </tr>
+                <tr>
+                    <td>SSD</td>
+                    <td contenteditable="true">Western Digital Blue SN5000 1TB M.2 NVMe Gen4</td>
+                    <td contenteditable="true" class="price">5499</td>
+                </tr>
+                <tr>
+                    <td>PSU</td>
+                    <td contenteditable="true">DeepCool Gamer Storm PN750D 80 Plus Gold</td>
+                    <td contenteditable="true" class="price">6920</td>
+                </tr>
+                <tr>
+                    <td>GPU</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true" class="price"></td>
+                </tr>
+                <tr>
+                    <td>Cooler</td>
+                    <td contenteditable="true"></td>
+                    <td contenteditable="true" class="price"></td>
+                </tr>
+                <tr>
+                    <td>Case</td>
+                    <td contenteditable="true">Ant Esports ICE-511MT</td>
+                    <td contenteditable="true" class="price">4360</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2" class="text-end fw-bold"> </td>
+                    <td id="total" class="fw-bold">59505</td>
+                </tr>
+            </tfoot>
+        </table>
+        <button class="btn btn-primary" onclick="exportToFile()">Export to Text File</button>
+    </div>
+
+    <script>
+        function updateTotal() {
+            const prices = document.querySelectorAll('.price');
+            let total = 0;
+            prices.forEach(price => {
+                const value = parseInt(price.innerText) || 0;
+                total += value;
+            });
+            document.getElementById('total').innerText = total;
+        }
+
+        document.querySelectorAll('.price').forEach(price => {
+            price.addEventListener('input', updateTotal);
+        });
+
+        function exportToFile() {
+            let content = "Component\tModel\tPrice (Rs)\n";
+            document.querySelectorAll('tbody tr').forEach(row => {
+                const cols = row.querySelectorAll('td');
+                content += `${cols[0].innerText}\t${cols[1].innerText}\t${cols[2].innerText}\n`;
+            });
+            content += `\nTotal\t\t${document.getElementById('total').innerText}`;
+
+            const blob = new Blob([content], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'pc_build_components.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>
