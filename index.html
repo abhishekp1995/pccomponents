@@ -6,64 +6,66 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2 class="text-center">PC Build Components</h2>
-        <table class="table table-bordered table-striped">
-            <thead class="table-dark text-center">
-                <tr>
-                    <th>Component</th>
-                    <th>Model</th>
-                    <th>Price (Rs)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Motherboard</td>
-                    <td contenteditable="true">MSI Pro B650M-A WIFI</td>
-                    <td contenteditable="true" class="price">15455</td>
-                </tr>
-                <tr>
-                    <td>CPU</td>
-                    <td contenteditable="true">AMD Ryzen 5 7600</td>
-                    <td contenteditable="true" class="price">18600</td>
-                </tr>
-                <tr>
-                    <td>RAM</td>
-                    <td contenteditable="true">Kingston Fury Beast 32GB (16GBx2) DDR5 6000MHz</td>
-                    <td contenteditable="true" class="price">8720</td>
-                </tr>
-                <tr>
-                    <td>SSD</td>
-                    <td contenteditable="true">Western Digital Blue SN5000 1TB M.2 NVMe Gen4</td>
-                    <td contenteditable="true" class="price">5499</td>
-                </tr>
-                <tr>
-                    <td>PSU</td>
-                    <td contenteditable="true">DeepCool Gamer Storm PN750D 80 Plus Gold</td>
-                    <td contenteditable="true" class="price">6920</td>
-                </tr>
-                <tr>
-                    <td>GPU</td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true" class="price"></td>
-                </tr>
-                <tr>
-                    <td>Cooler</td>
-                    <td contenteditable="true"></td>
-                    <td contenteditable="true" class="price"></td>
-                </tr>
-                <tr>
-                    <td>Case</td>
-                    <td contenteditable="true">Ant Esports ICE-511MT</td>
-                    <td contenteditable="true" class="price">4360</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td colspan="2" class="text-end fw-bold"> </td>
-                    <td id="total" class="fw-bold">59505</td>
-                </tr>
-            </tfoot>
-        </table>
+        <h2 class="text-center mb-5">PC Build Components</h2>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Component</th>
+                        <th>Model</th>
+                        <th>Price (Rs)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Motherboard</td>
+                        <td contenteditable="true">MSI Pro B650M-A WIFI</td>
+                        <td contenteditable="true" class="price">15455</td>
+                    </tr>
+                    <tr>
+                        <td>CPU</td>
+                        <td contenteditable="true">AMD Ryzen 5 7600</td>
+                        <td contenteditable="true" class="price">18600</td>
+                    </tr>
+                    <tr>
+                        <td>RAM</td>
+                        <td contenteditable="true">Kingston Fury Beast 32GB (16GBx2) DDR5 6000MHz</td>
+                        <td contenteditable="true" class="price">8720</td>
+                    </tr>
+                    <tr>
+                        <td>SSD</td>
+                        <td contenteditable="true">Western Digital Blue SN5000 1TB M.2 NVMe Gen4</td>
+                        <td contenteditable="true" class="price">5499</td>
+                    </tr>
+                    <tr>
+                        <td>PSU</td>
+                        <td contenteditable="true">DeepCool Gamer Storm PN750D 80 Plus Gold</td>
+                        <td contenteditable="true" class="price">6920</td>
+                    </tr>
+                    <tr>
+                        <td>GPU</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true" class="price"></td>
+                    </tr>
+                    <tr>
+                        <td>Cooler</td>
+                        <td contenteditable="true"></td>
+                        <td contenteditable="true" class="price"></td>
+                    </tr>
+                    <tr>
+                        <td>Case</td>
+                        <td contenteditable="true">Ant Esports ICE-511MT</td>
+                        <td contenteditable="true" class="price">4360</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2" class="text-end fw-bold"></td>
+                        <td id="total" class="fw-bold">59505</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
         <button class="btn btn-primary" onclick="exportToFile()">Export to Text File</button>
     </div>
 
